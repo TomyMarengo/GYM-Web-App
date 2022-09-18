@@ -1,0 +1,23 @@
+import Vue from 'vue';
+import Vuex from "vuex";
+
+Vue.use(Vuex)
+
+export default new Vuex.Store({
+    state: {
+        logged: false
+    },
+    getters: {
+      getLogged (state) {
+          return state.logged;
+      }
+    },
+    mutations: {
+        login: state => {
+            state.logged = true
+        },
+        logout: state => {
+            state.logged = false
+        }
+    }
+})

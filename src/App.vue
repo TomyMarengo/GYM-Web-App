@@ -1,35 +1,20 @@
 <template>
   <v-app>
-    <v-navigation-drawer app>
-      <!-- -->
-    </v-navigation-drawer>
-
-    <v-app-bar app>
-      <!-- -->
-    </v-app-bar>
-
-    <!-- Sizes your content based upon application components -->
+    <nav-bar></nav-bar>
     <v-main>
-
-      <!-- Provides the application the proper gutter -->
-      <v-container fluid>
-
-        <!-- If using vue-router -->
-        <router-view></router-view>
-      </v-container>
+      <router-view></router-view>
     </v-main>
 
-    <v-footer app>
-      <!-- -->
-    </v-footer>
   </v-app>
 </template>
 
 <script>
+import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'App',
   components: {
+    NavBar
   }
 }
 </script>
