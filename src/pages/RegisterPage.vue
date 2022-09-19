@@ -1,18 +1,23 @@
 <template>
-    <div> 
-        Register Page
+    <div class="bg"> 
+        <register-form></register-form>
     </div>
 </template>
 
 <script>
+    import RegisterForm from '../components/register/RegisterForm';
+
     export default {
         name: "RegisterPage",
+        components: {
+            RegisterForm
+        }
     }
 </script>
 
 <style scoped>
 
-    div {
+    .bg {
         background-image: url('../../public/images/login-register-image.png');
         background-position: center;
         background-repeat: no-repeat;
