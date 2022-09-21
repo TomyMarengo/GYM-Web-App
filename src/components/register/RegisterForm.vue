@@ -5,9 +5,9 @@
                 <v-form ref="registerForm">
                 <div class="register-text">REGISTRARSE</div>
                 <v-text-field solo v-model="email" label='Correo electrónico *' :rules="emailRules" required></v-text-field>
-                <v-text-field solo v-model="username" label='Nombre y apellido *' :rules="usernameRules" required></v-text-field>
-                <v-text-field solo v-model="password" label='Contraseña *' :rules="passwordRules" required></v-text-field>
-                <v-text-field solo v-model="confirmPassword" label='Repetir contraseña *' :rules="[ passwordConfirmationRule ]" required></v-text-field>
+                <v-text-field solo v-model="fullName" label='Nombre y apellido *' :rules="usernameRules" required></v-text-field>
+                <v-text-field solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
+                <v-text-field solo v-model="confirmPassword" label='Repetir contraseña *' :rules="[ passwordConfirmationRule ]" type="password" required></v-text-field>
                 <v-btn x-large class="next-btn" @click="validateForm" text rounded> Siguiente </v-btn>
                 <div class="sign-in">¿Ya tienes una cuenta? Ingresa aquí</div>   <!-- To Do: ref to sign in -->
             </v-form>
@@ -22,7 +22,7 @@
 
             data: () => ({
                 email: '',
-                username: '',
+                fullName: '',
                 password: '',
                 confirmPassword: '',
 
