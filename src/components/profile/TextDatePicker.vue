@@ -32,6 +32,7 @@
 export default {
   props: {
     initialDate: { type: String },
+
     color: { type: String, default: 'primary' },
   },
   data: () => ({
