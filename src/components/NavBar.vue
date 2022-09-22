@@ -12,7 +12,7 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items v-if="!isLoggedIn">
-        <v-btn @click="$store.commit('login')" class="primary--text" to="/login" text>Iniciar Sesión</v-btn>
+        <v-btn @click="$store.commit('login')" class="primary--text" to="/ingresar" text>Iniciar Sesión</v-btn>
         <div class="d-flex align-center ml-1">
           <v-btn class="primary secondary--text" to='/registrarse' text rounded>Registrarse</v-btn>
         </div>
