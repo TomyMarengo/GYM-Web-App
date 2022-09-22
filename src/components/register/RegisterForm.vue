@@ -112,11 +112,11 @@
     }
 
     .sign-in {
-        margin-top: 0.25em;
+        margin-top: 1em;
         font-family: 'Roboto';
         font-style: normal;
-        font-weight: 700;
-        font-size: 15px;
+        font-weight: 500;
+        font-size: 18px;
         line-height: 36px;
         letter-spacing: 1.25px;
         color: #000000;
