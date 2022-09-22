@@ -7,8 +7,8 @@
                 <v-text-field solo v-model="email" label='Correo electrónico *' :rules="emailRules" required></v-text-field>
                 <v-text-field solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
                 <v-btn x-large class="access-btn" @click="validateForm" text rounded> Acceder </v-btn>
-                <div class="forgot-password" to="/forgot-password"> ¿Olvidaste tu contraseña? </div> 
-                <div class="register">¿Ya tienes una cuenta? Ingresa <router-link to="registrarse"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div> 
+                <router-link to="/forgot-password"><div class="forgot-password"> ¿Olvidaste tu contraseña? </div></router-link>  
+                <div class="register">¿Todavía no tienes cuenta? Regístrate <router-link to="registrarse"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div> 
             </v-form>
             </v-col>
         </v-row>
