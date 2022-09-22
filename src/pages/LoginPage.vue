@@ -1,14 +1,16 @@
 <template>
     <div class="bg"> 
-        Login form
+        <login-form></login-form>
     </div>
 </template>
 
 <script>
+    import LoginForm from '../components/login/LoginForm';
 
     export default {
         name: "LoginPage",
         components: {
+            LoginForm
         }
     }
 </script>
