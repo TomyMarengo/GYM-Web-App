@@ -9,7 +9,7 @@
                 <v-text-field solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
                 <v-text-field solo v-model="confirmPassword" label='Repetir contraseña *' :rules="[ passwordConfirmationRule ]" type="password" required></v-text-field>
                 <v-btn x-large class="next-btn" @click="validateForm" text rounded> Siguiente </v-btn>
-                <div class="sign-in">¿Ya tienes una cuenta? Ingresa aquí</div>   <!-- To Do: ref to sign in -->
+                <div class="sign-in">¿Ya tienes una cuenta? Ingresa <router-link to="/ingresar"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div>
             </v-form>
             </v-col>
         </v-row>
