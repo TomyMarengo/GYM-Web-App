@@ -1,6 +1,6 @@
 <template>
-  <div style="height: 100%">
-    <v-sheet class="left-sheet">
+  <div class="main-div">
+    <v-sheet class="left-sheet" height="100%" width="340px" tile>
       <v-img :contain="true" class="profile-picture" :src="profilePicToDisplay">
         <button v-if="isEditingProfile" v-ripple @click.prevent="uploadProfilePictureClicked" style="position: absolute; left: 0; right: 0; top: 0; bottom: 0; background: rgba(0,0,0,0.5);">
           <v-icon size="164" style="position: absolute; left: 12.5%; right: 12.5%; top: 12.5%; bottom: 12.5%;">mdi-arrow-up-bold-box</v-icon>
@@ -35,6 +35,8 @@
       <v-btn class="ma-4" rounded color="tertiary white--text" outlined :disabled="isLoggingOut" @click.prevent="logoutClicked">Cerrar Sesión</v-btn>
     </v-sheet>
 
+    <favorite-card :routine="{ name: 'Rutina123' }" :id="1" @icon-click="onRoutineUnfavorited"/>
+
     <v-snackbar v-model="showSnackbar" :multi-line="true" :bottom="true" :absolute="true"
                 :timeout="snackbarTimeout" color="tertiary">
       {{ snackbarMessage }}
@@ -44,28 +46,24 @@
 
 <script>
 import TextDatePicker from "@/components/profile/TextDatePicker";
+import FavoriteCard from "@/components/profile/FavoriteCard";
 
 export default {
   name: "ProfilePage",
-  components: {TextDatePicker},
+  components: {FavoriteCard, TextDatePicker},
 
   data: () => ({
     isEditingProfile: false,
     isSavingProfile: false,
     isLoggingOut: false,
-    sexes: ['Male', 'Female', 'Unspecified', 'Tornado'],
+    sexes: ['Male', 'Female', 'Unspecified' ],
     userData: {
       fullName: 'Pedro McPedro',
       sex: 'Male',
       birthday: '2000-4-20',
       picture: null,
     },
-    editingUserData: {
-      fullName: 'u',
-      sex: 'u',
-      birthday: 'u',
-      picture: null,
-    },
+    editingUserData: undefined,
     snackbarMessage: '',
     showSnackbar: false,
     snackbarTimeout: 5000,
@@ -74,7 +72,7 @@ export default {
   computed: {
     profilePicToDisplay: function () {
       return (this.userData.picture && this.userData.picture.length > 0)  ?
-          require(this.userData.picture)
+          this.userData.picture
           : require('../../public/images/image-placeholder.jpg');
     }
   },
@@ -113,11 +111,25 @@ export default {
       await new Promise(resolve => setTimeout(resolve, 1000));
       this.isLoggingOut = false;
     },
+
+    onRoutineUnfavorited: function (id) {
+      console.log(id);
+    }
   }
 }
 </script>
 
 <style scoped>
+.main-div {
+  height: 100%;
+  background-color: white;
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
 .left-sheet {
   box-sizing: border-box;
 
@@ -127,10 +139,6 @@ export default {
   align-items: center;
   padding: 50px;
 
-  width: 340px;
-  height: 100%;
-
-  background: #FFFFFF;
   border-right: 1px solid #C6C3C3;
   box-shadow: 4px 0 4px rgba(0, 0, 0, 0.25);
 }
