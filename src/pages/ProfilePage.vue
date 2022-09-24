@@ -27,12 +27,18 @@
           <text-date-picker color="tertiary" :initial-date="editingUserData.birthday" @changed="birthdayChanged"/>
         </v-container>
 
-        <v-btn class="ma-1" rounded color="primary black--text" :disabled="isSavingProfile" @click.prevent="editProfileSaveClicked">Guardar</v-btn>
-        <v-btn class="ma-1" rounded color="error black--text" :disabled="isSavingProfile" @click.prevent="editProfileCancelClicked">Cancelar</v-btn>
+        <template v-if="!isSavingProfile">
+          <v-btn class="ma-1" rounded color="primary black--text" :disabled="isSavingProfile" :loading="isSavingProfile" @click.prevent="editProfileSaveClicked">Guardar</v-btn>
+          <v-btn class="ma-1" rounded color="error black--text" :disabled="isSavingProfile" @click.prevent="editProfileCancelClicked">Cancelar</v-btn>
+        </template>
+        <template v-else>
+          <v-progress-circular color="tertiary" indeterminate :size="50"/>
+          <p class="mt-2">Guardando...</p>
+        </template>
       </template>
 
       <v-spacer/>
-      <v-btn class="ma-4" rounded color="tertiary white--text" outlined :disabled="isLoggingOut" @click.prevent="logoutClicked">Cerrar Sesión</v-btn>
+      <v-btn v-if="!isEditingProfile" class="ma-4" rounded color="tertiary white--text" outlined :disabled="isLoggingOut" @click.prevent="logoutClicked">Cerrar Sesión</v-btn>
     </v-sheet>
 
     <small-favorite-card :routine="{ name: 'Rutina123' }" :id="1" @icon-click="onRoutineUnfavorited"/>
