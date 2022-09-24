@@ -35,7 +35,10 @@
       <v-btn class="ma-4" rounded color="tertiary white--text" outlined :disabled="isLoggingOut" @click.prevent="logoutClicked">Cerrar Sesión</v-btn>
     </v-sheet>
 
-    <favorite-card :routine="{ name: 'Rutina123' }" :id="1" @icon-click="onRoutineUnfavorited"/>
+    <small-favorite-card :routine="{ name: 'Rutina123' }" :id="1" @icon-click="onRoutineUnfavorited"/>
+    <small-routine-card :routine="{ name: 'Rutina456' }" :id="1" @icon-click="onRoutineEditClicked"/>
+    <small-exercise-card :exercise="{ name: 'Ejercicio1', series: 50, seconds: 20 }"/>
+    <small-exercise-card :exercise="{ name: 'Ejercicio2', seconds: 20 }"/>
 
     <v-snackbar v-model="showSnackbar" :multi-line="true" :bottom="true" :absolute="true"
                 :timeout="snackbarTimeout" color="tertiary">
@@ -46,11 +49,13 @@
 
 <script>
 import TextDatePicker from "@/components/profile/TextDatePicker";
-import FavoriteCard from "@/components/profile/FavoriteCard";
+import SmallFavoriteCard from "@/components/profile/SmallFavoriteCard";
+import SmallRoutineCard from "@/components/profile/SmallRoutineCard";
+import SmallExerciseCard from "@/components/profile/SmallExerciseCard";
 
 export default {
   name: "ProfilePage",
-  components: {FavoriteCard, TextDatePicker},
+  components: {SmallExerciseCard, SmallRoutineCard, SmallFavoriteCard, TextDatePicker},
 
   data: () => ({
     isEditingProfile: false,
@@ -113,8 +118,12 @@ export default {
     },
 
     onRoutineUnfavorited: function (id) {
-      console.log(id);
-    }
+      console.log('Routine unfavorited: ' + id);
+    },
+
+    onRoutineEditClicked: function (id) {
+      console.log('Edit routine clicked: ' + id);
+    },
   }
 }
 </script>

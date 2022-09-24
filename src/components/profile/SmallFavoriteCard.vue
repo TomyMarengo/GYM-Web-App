@@ -7,7 +7,7 @@
 <script>
 import SmallCard from "@/components/profile/SmallCard";
 export default {
-  name: "FavoriteCard",
+  name: "SmallFavoriteCard",
 
   components: {SmallCard},
 
