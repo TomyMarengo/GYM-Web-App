@@ -51,8 +51,7 @@
         <v-icon color="primary">mdi-dumbbell</v-icon>
       </v-app-bar-nav-icon>
       <v-toolbar-title class="pa-0 primary--text">ENTRENAGRATIS.ES</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items>
+      <v-toolbar-items class="inicio-entrenamientos">
         <v-btn class="primary--text" to="/" text>Inicio</v-btn>
         <v-btn class="primary--text" to="/entrenamientos" text>Entrenamientos</v-btn>
       </v-toolbar-items>
@@ -97,5 +96,10 @@ export default {
 </script>
 
 <style scoped>
-
+  .inicio-entrenamientos {
+    position: absolute;
+    top: 50%;  /* position the top  edge of the element at the middle of the parent */
+    left: 50%; /* position the left edge of the element at the middle of the parent */
+    transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
+  }
 </style>
