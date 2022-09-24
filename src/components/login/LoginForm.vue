@@ -1,18 +1,34 @@
 <template>
-    <v-container fill-height>
-        <v-row justify="center" align="center">
-            <v-col>
-                <v-form ref="loginForm">
-                <div class="login-text">INICIAR SESIÓN</div>
-                <v-text-field solo v-model="email" label='Correo electrónico *' :rules="emailRules" required></v-text-field>
-                <v-text-field solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
-                <v-btn x-large class="access-btn" @click="validateForm" text rounded> Acceder </v-btn>
-                <router-link to="/forgot-password"><div class="forgot-password"> ¿Olvidaste tu contraseña? </div></router-link>  
-                <div class="register">¿Todavía no tienes cuenta? Regístrate <router-link to="registrarse"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div> 
-            </v-form>
-            </v-col>
-        </v-row>
+  <v-content class="bg">
+    <v-container fill-height pa-0>
+      <v-layout align-center justify-center>
+        <v-flex xs10 sm7 md5 class="max">
+          <v-card elevation="10" shaped>
+            <v-toolbar dark color="secondary">
+              <v-btn @click="goBack" icon>
+                <v-icon >mdi-arrow-left</v-icon>
+              </v-btn>
+              <v-toolbar-title class="font-weight-bold text-uppercase">Iniciar Sesión</v-toolbar-title>
+            </v-toolbar>
+            <v-card-text class="px-10 mt-4">
+              <v-form ref="loginForm">
+                <v-text-field style="max-width: 600px; margin: auto" solo v-model="email" label='Correo electrónico *' :rules="emailRules" required></v-text-field>
+                <v-text-field style="max-width: 600px; margin: auto" solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
+              </v-form>
+            </v-card-text>
+            <v-card-actions class="d-flex justify-center">
+              <v-btn x-large @click="validateForm" rounded color="primary" class="secondary--text px-7 py-2">Acceder</v-btn>
+            </v-card-actions>
+
+            <v-card-text class="d-flex flex-column justify-center text-center">
+              <router-link to="/forgot-password"><span class="register-text secondary--text link"> ¿Olvidaste tu contraseña? </span></router-link>
+              <span class="register-text my-3">¿Todavía no tienes cuenta? Regístrate <router-link to="registrarse"><span class="link">aquí</span></router-link></span>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
     </v-container>
+  </v-content>
 </template>
 
 <script>
@@ -37,81 +53,37 @@
                 ],
 
             }),
-
             methods: {
                 validateForm(){
-                    this.$refs.loginForm.validate()
+                    if (this.$refs.loginForm.validate()) {
+                      this.$store.commit('login')
+                      this.goBack()
+                    }
                 },
+                goBack(){
+                  this.$router.push({path: this.$store.getters.getFromPath})
+                }
             }
         }
 </script>
 
 <style scoped>
+.register-text {
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 1.25px;
+}
 
-    .container {
-        text-align: center;
-        width: 50vw;
-        height: 752px;
-        padding: 40px 120px;
-    }
+.link {
+  color:cadetblue;
+  text-decoration: underline;
+}
 
-    .col {
-        background-color: #EDEDED; 
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 40px;
-        padding: 40px 120px;
-    }
-
-    .login-text {
-        font-family: 'Bakbak One';
-        font-style: normal;
-        font-size: 48px;
-        letter-spacing: 1.25px;
-        color: #000000;
-        margin-bottom: 1em;
-        text-transform: uppercase;
-    }
-
-    .access-btn {
-        padding: 0px 16px;
-        margin-top: 0.5em;
-        background: #D6FF00;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 50px;
-        font-family: 'Bakbak One';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 32px;
-        line-height: 45px;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 1.25px;
-        text-transform: uppercase;
-        color: #343333;
-    }
-
-    .register {
-        margin-top: 1em;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 36px;
-        letter-spacing: 1.25px;
-        color: #000000;
-    }
-
-    .forgot-password {
-        margin-top: 1em;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 200;
-        font-size: 20px;
-        line-height: 24px;
-        letter-spacing: 1.25px;
-        text-decoration-line: underline;
-        color: #000000;
-        text-decoration-color: #888;
-    }
-
+.bg {
+  background-image: url('../../../public/images/login-register-image.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
 </style>

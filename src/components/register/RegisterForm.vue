@@ -1,19 +1,34 @@
 <template>
-    <v-container>
-        <v-row justify="center" align="center">
-            <v-col>
-                <v-form ref="registerForm">
-                <div class="register-text">REGISTRARSE</div>
-                <v-text-field solo v-model="email" label='Correo electrónico *' :rules="emailRules" required></v-text-field>
-                <v-text-field solo v-model="fullName" label='Nombre y apellido *' :rules="usernameRules" required></v-text-field>
-                <v-text-field solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
-                <v-text-field solo v-model="confirmPassword" label='Repetir contraseña *' :rules="[ passwordConfirmationRule ]" type="password" required></v-text-field>
-                <v-btn x-large class="next-btn" @click="validateForm" text rounded> Siguiente </v-btn>
-                <div class="sign-in">¿Ya tienes una cuenta? Ingresa <router-link to="/ingresar"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div>
-            </v-form>
-            </v-col>
-        </v-row>
+  <v-content class="bg">
+    <v-container fill-height pa-0>
+      <v-layout align-center justify-center>
+        <v-flex xs10 sm7 md6 class="max">
+          <v-card elevation="10" shaped>
+            <v-toolbar dark color="secondary">
+              <v-btn @click="goBack" icon>
+                <v-icon >mdi-arrow-left</v-icon>
+              </v-btn>
+              <v-toolbar-title class="font-weight-bold text-uppercase">Registrarse</v-toolbar-title>
+            </v-toolbar>
+            <v-card-text class="px-10 mt-4">
+              <v-form ref="registerForm">
+                <v-text-field style="max-width: 600px; margin: auto" solo v-model="email" label='Correo electrónico *' :rules="emailRules" required></v-text-field>
+                <v-text-field style="max-width: 600px; margin: auto" solo v-model="fullName" label='Nombre y apellido *' :rules="usernameRules" required></v-text-field>
+                <v-text-field style="max-width: 600px; margin: auto" solo v-model="password" label='Contraseña *' :rules="passwordRules" type="password" required></v-text-field>
+                <v-text-field style="max-width: 600px; margin: auto" solo v-model="confirmPassword" label='Repetir contraseña *' :rules="[ passwordConfirmationRule ]" type="password" required></v-text-field>
+              </v-form>
+            </v-card-text>
+            <v-card-actions class="d-flex justify-center">
+              <v-btn x-large @click="validateForm" rounded color="primary" class="secondary--text px-7 py-2">Siguiente</v-btn>
+            </v-card-actions>
+            <v-card-text class="d-flex justify-center text-center">
+              <div class="sign-in-text my-3">¿Ya tienes una cuenta? Ingresa <router-link to="/ingresar"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div>
+            </v-card-text>
+          </v-card>
+        </v-flex>
+      </v-layout>
     </v-container>
+  </v-content>
 </template>
 
 <script>
@@ -60,67 +75,25 @@
                 validateForm(){
                     this.$refs.registerForm.validate()
                 },
+                goBack(){
+                  this.$router.push({path: this.$store.getters.getFromPath})
+                }
             }
         }
 </script>
 
 <style scoped>
-
-    .container {
-        text-align: center;
-        width: 50vw;
-        height: 752px;
-        padding: 40px 120px;
-    }
-
-    .col {
-        background-color: #EDEDED; 
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 40px;
-        padding: 40px 120px;
-    }
-
-    .register-text {
-        font-family: 'Bakbak One';
-        font-style: normal;
-        font-size: 48px;
-        letter-spacing: 1.25px;
-        color: #000000;
-        margin-bottom: 1em;
-        text-transform: uppercase;
-    }
-
-    .next-btn {
-        
-        padding: 0px 16px;
-        margin-top: 0.5em;
-
-        background: #D6FF00;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 50px;
-
-        font-family: 'Bakbak One';
-        font-style: normal;
+    .sign-in-text {
         font-weight: 400;
-        font-size: 32px;
-        line-height: 45px;
-        align-items: center;
-        text-align: center;
-        letter-spacing: 1.25px;
-        text-transform: uppercase;
-        color: #343333;
-    }
-
-    .sign-in {
-        margin-top: 1em;
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 18px;
         line-height: 36px;
         letter-spacing: 1.25px;
-        color: #000000;
     }
 
-
+    .bg {
+      background-image: url('../../../public/images/login-register-image.png');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+    }
 </style>

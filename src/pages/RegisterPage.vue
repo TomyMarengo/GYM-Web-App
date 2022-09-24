@@ -1,7 +1,5 @@
 <template>
-    <div class="bg"> 
-        <register-form></register-form>
-    </div>
+  <register-form></register-form>
 </template>
 
 <script>
@@ -16,13 +14,4 @@
 </script>
 
 <style scoped>
-
-    .bg {
-        background-image: url('../../public/images/login-register-image.png');
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        height: 100%;
-    }
-
 </style>
