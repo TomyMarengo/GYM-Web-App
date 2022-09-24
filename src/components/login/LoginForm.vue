@@ -2,7 +2,7 @@
   <v-content class="bg">
     <v-container fill-height pa-0>
       <v-layout align-center justify-center>
-        <v-flex xs10 sm7 md5 class="max">
+        <v-flex xs10 sm7 md5>
           <v-card elevation="10" shaped>
             <v-toolbar dark color="secondary">
               <v-btn @click="goBack" icon>
