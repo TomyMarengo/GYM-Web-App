@@ -61,7 +61,10 @@
                     }
                 },
                 goBack(){
-                  this.$router.push({path: this.$store.getters.getFromPath})
+                  if (this.$store.getters.getFromPath.includes('/registrarse') || this.$store.getters.getFromPath.includes('/ingresar'))
+                    this.$router.push({path: '/'})
+                  else
+                    this.$router.push({path: this.$store.getters.getFromPath})
                 }
             }
         }
