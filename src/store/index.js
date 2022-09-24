@@ -5,11 +5,15 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        logged: false
+        logged: false,
+        fromPath: null
     },
     getters: {
       getLogged (state) {
-          return state.logged;
+          return state.logged
+      },
+      getFromPath (state) {
+          return state.fromPath
       }
     },
     mutations: {
@@ -18,6 +22,9 @@ export default new Vuex.Store({
         },
         logout: state => {
             state.logged = false
+        },
+        setFromPath: (state, newFromPath) => {
+            state.fromPath = newFromPath
         }
     }
 })
