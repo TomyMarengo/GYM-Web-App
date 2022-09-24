@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Vuex from "vuex";
-import rutines from '../rutines.js'
+import routines from '../routines.js'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
-        rutines,
+        routines,
         logged: false,
         fromPath: null,
         exerciseTypes: ['Fortalecimiento', 'Aeróbico', 'Flexibilidad', 'Resistencia'],

@@ -3,11 +3,11 @@
     <v-row class="mb-5" >
       <v-col
           sm="6"
-          md="4"
-          v-for="rutine in $store.state.rutines"
-          :key="rutine.name"
+          lg="4"
+          v-for="routine in this.routines"
+          :key="routine.name"
       >
-        <RoutineCard :rutine="rutine"/>
+        <RoutineCard :routine="routine"/>
       </v-col>
     </v-row>
   </div>
@@ -17,7 +17,10 @@
 import RoutineCard from "@/components/cards/RoutineCard";
 export default {
   name: "WorkoutsDisplay",
-  components: {RoutineCard}
+  components: {RoutineCard},
+  props: {
+    routines: Array
+  }
 }
 </script>
 

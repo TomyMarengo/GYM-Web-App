@@ -1,5 +1,5 @@
 <template>
-  <v-card :elevation="4">
+  <v-card :elevation="4" class="my-6">
     <v-toolbar dark color="secondary">
       <v-toolbar-title class="font-weight-bold text-uppercase">Entrenamientos</v-toolbar-title>
     </v-toolbar>
@@ -80,11 +80,6 @@
         </v-range-slider>
       </v-col>
     </v-row>
-    <v-card-actions>
-      <v-spacer></v-spacer>
-        <v-btn x-large rounded color="primary" class="secondary--text px-6 mb-5 mt-2">Buscar</v-btn>
-      <v-spacer></v-spacer>
-    </v-card-actions>
   </v-card>
 </template>
 
