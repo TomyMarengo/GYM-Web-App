@@ -1,14 +1,14 @@
 <template>
-  <v-card class="card py-8 px-4" width="320px" height="220px" color="#EDEDED">
-    <div class="main-div">
-      <img :src="image" style="border-radius: 20px; height: 100%; width: 120px; object-fit: cover;"/>
-      <div class="content-div">
-        <slot/>
-      </div>
+  <v-card outlined class="fill-height" height="350" width="350px">
+    <v-img :src="image" height="200px" />
+    <div class="d-flex align-center">
+      <slot/>
+      <v-spacer></v-spacer>
+      <v-btn class="mr-3" v-if="icon" @click.prevent="iconClicked" icon>
+        <v-icon large :color="iconColor">{{icon}}</v-icon>
+      </v-btn>
     </div>
-    <v-btn v-if="icon" @click.prevent="iconClicked" icon style="position: absolute; right: 16px; top: 16px;">
-      <v-icon large :color="iconColor">{{icon}}</v-icon>
-    </v-btn>
+    <slot name="extra"></slot>
   </v-card>
 </template>
 
@@ -17,7 +17,7 @@ export default {
   name: "SmallCard",
 
   props: {
-    image: { default: require('../../../public/images/image-placeholder.jpg') },
+    image: { default: require('../../../public/images/abdominales.jpg') },
     icon: { type: String },
     iconColor: { type: String },
     id: {},
@@ -31,30 +31,5 @@ export default {
 }
 </script>
 
-<style scoped>.card {
-  box-sizing: border-box;
-
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  padding: 20px;
-
-  border-radius: 20px;
-}
-
-.main-div {
-  /* Auto layout */
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-}
-
-.content-div {
-  display: flex;
-  flex-direction: column;
-}
+<style scoped>
 </style>

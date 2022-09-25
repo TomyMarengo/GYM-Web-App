@@ -62,11 +62,13 @@
           <v-btn class="primary secondary--text" to='/registrarse' text rounded>Registrarse</v-btn>
         </div>
       </v-toolbar-items>
-      <v-toolbar-title v-else>
+      <v-toolbar-items v-else>
+        <v-btn class="primary--text" to="/perfil" text>Mi perfil</v-btn>
         <div class="d-flex align-center ml-1">
           <v-btn @click="$store.commit('logout')" class="primary secondary--text" to="/" text rounded>Cerrar Sesión</v-btn>
         </div>
-      </v-toolbar-title>
+
+      </v-toolbar-items>
     </v-app-bar>
   </div>
 </template>

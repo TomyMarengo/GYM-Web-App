@@ -15,6 +15,7 @@
             readonly outlined
             v-bind="attrs"
             v-on="on"
+            hide-details
         ></v-text-field>
       </template>
       <v-date-picker
