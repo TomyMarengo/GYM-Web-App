@@ -4,6 +4,7 @@ import HomePage from '../pages/HomePage';
 import WorkoutsPage from "../pages/WorkoutsPage";
 import RegisterPage from "../pages/RegisterPage";
 import LoginPage from "../pages/LoginPage"
+import VerifyPage from "../pages/VerifyPage"
 import store from "../store/index";
 
 Vue.use(VueRouter);
@@ -13,7 +14,8 @@ const router = new VueRouter({
         { path: '/', name: 'Inicio', component: HomePage },
         { path: '/entrenamientos', component: WorkoutsPage},
         { path: '/registrarse', component: RegisterPage},
-        { path: '/ingresar', component: LoginPage}
+        { path: '/ingresar', component: LoginPage},
+        { path: '/verificar-usuario', component: VerifyPage }
     ]
 });
 
