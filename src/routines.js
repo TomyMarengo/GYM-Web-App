@@ -4,43 +4,43 @@ export default [
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 4.3,
+        classification: 4.3,
         difficulty: 4,
-        exercises: []
+        exercises: [],
     },
     {
         name: 'rutina2',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Aeróbico'],
         muscles: ['Cuadriceps', 'Dorsal'],
-        rating: 2.7,
+        classification: 2.7,
         difficulty: 3,
         exercises: []
     },
     {
-        name: 'rutina3',
+        name: 'rutina23',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 1,
+        classification: 1,
         difficulty: 2,
         exercises: []
     },
     {
-        name: 'rutina4',
+        name: 'rutina44',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 1,
+        classification: 1,
         difficulty: 2,
         exercises: []
     },
     {
-        name: 'rutina5',
+        name: 'rutina125',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps'],
-        rating: 4.3,
+        classification: 4.3,
         difficulty: 4,
         exercises: []
     },
@@ -49,7 +49,7 @@ export default [
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 5,
+        classification: 5,
         difficulty: 5,
         exercises: []
     }, {
@@ -57,16 +57,16 @@ export default [
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 2,
+        classification: 2,
         difficulty: 2,
         exercises: []
     },
     {
-        name: 'rutina8',
+        name: 'rutina88',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 3,
+        classification: 3,
         difficulty: 3,
         exercises: []
     },
@@ -75,16 +75,16 @@ export default [
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 4.5,
+        classification: 4.5,
         difficulty: 3,
         exercises: []
     },
     {
-        name: 'rutina10',
+        name: 'rutina20',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Aeróbico'],
         muscles: [],
-        rating: 4.3,
+        classification: 4.3,
         difficulty: 4,
         exercises: []
     },
@@ -93,16 +93,16 @@ export default [
         creator: 'Thomas Mizrahi',
         exerciseTypes: [],
         muscles: [],
-        rating: null,
+        classification: null,
         difficulty: null,
         exercises: []
     },
     {
-        name: 'rutina12',
+        name: 'rutina48',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 4.8,
+        classification: 2.8,
         difficulty: 1,
         exercises: []
     },
@@ -111,7 +111,61 @@ export default [
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
-        rating: 4.3,
+        classification: 1.3,
+        difficulty: 1,
+        exercises: []
+    },
+    {
+        name: 'rutina88',
+        creator: 'Thomas Mizrahi',
+        exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
+        muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
+        classification: 3,
+        difficulty: 3,
+        exercises: []
+    },
+    {
+        name: 'rutina9',
+        creator: 'Tomas Marengo',
+        exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
+        muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
+        classification: 3.5,
+        difficulty: 5,
+        exercises: []
+    },
+    {
+        name: 'rutina20',
+        creator: 'Tomas Marengo',
+        exerciseTypes: ['Aeróbico'],
+        muscles: [],
+        classification: 1.7,
+        difficulty: 3,
+        exercises: []
+    },
+    {
+        name: 'rutina11',
+        creator: 'Tomas Marengo',
+        exerciseTypes: [],
+        muscles: [],
+        classification: null,
+        difficulty: null,
+        exercises: []
+    },
+    {
+        name: 'rutina48',
+        creator: 'Ivan Chayer',
+        exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
+        muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
+        classification: 3.8,
+        difficulty: 2,
+        exercises: []
+    },
+    {
+        name: 'rutina13',
+        creator: 'Ivan Chayer',
+        exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
+        muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
+        classification: 3.3,
         difficulty: 4,
         exercises: []
     }

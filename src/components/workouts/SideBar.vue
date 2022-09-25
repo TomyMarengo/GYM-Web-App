@@ -14,8 +14,10 @@
               v-for="(exerciseType, i) in this.$store.getters.getExerciseTypes"
               :key="i"
               :label="exerciseType"
-              :value="i"
+              :value="exerciseType"
               color="secondary"
+              v-model="types"
+              @change="filterChange()"
           />
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -28,8 +30,10 @@
               v-for="(muscle, i) in this.$store.getters.getMuscles"
               :key="i"
               :label="muscle"
-              :value="i"
+              :value="muscle"
               color="secondary"
+              v-model="muscles"
+              @change="filterChange()"
           />
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -38,8 +42,9 @@
       <v-col class="mt-10">
         <h3>Clasificación</h3>
         <v-range-slider
+            v-model="classification"
             :tick-labels="['0','1','2','3','4','5']"
-            :value="[3, 5]"
+            :value="[0,5]"
             min="0"
             max="5"
             tick-size="0"
@@ -48,6 +53,8 @@
             color="secondary"
             track-fill-color="yellow"
             track-color="secondary"
+
+            @change="filterChange()"
         >
         <template v-slot:thumb-label="props">
           <v-icon dark :size="props.value*6.5">
@@ -61,8 +68,9 @@
       <v-col class="mt-0">
         <h3>Dificultad</h3>
         <v-range-slider
+            v-model="difficulty"
             :tick-labels="['0','1','2','3','4','5']"
-            :value="[1, 4]"
+            :value="[0,5]"
             min="0"
             max="5"
             tick-size="0"
@@ -71,6 +79,7 @@
             color="secondary"
             track-fill-color="red"
             track-color="secondary"
+            @change="filterChange()"
         >
           <template v-slot:thumb-label="props">
             <v-icon dark :size="props.value*6">
@@ -86,6 +95,17 @@
 <script>
 export default {
   name: "SideBar",
+  data: () => ({
+    muscles: [],
+    types: [],
+    classification: [0,5],
+    difficulty: [0,5]
+  }),
+  methods: {
+    filterChange: function() {
+      this.$emit('filter-event', this.muscles, this.types, this.classification, this.difficulty)
+    }
+  }
 }
 </script>
 

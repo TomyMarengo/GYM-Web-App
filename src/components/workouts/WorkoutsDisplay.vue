@@ -5,7 +5,7 @@
           sm="6"
           lg="4"
           v-for="routine in this.routines"
-          :key="routine.name"
+          :key="routine.name + routine.creator"
       >
         <RoutineCard :routine="routine"/>
       </v-col>

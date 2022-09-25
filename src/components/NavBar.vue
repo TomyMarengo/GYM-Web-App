@@ -36,7 +36,13 @@
             </v-list-item-icon>
             <v-list-item-title >Registrarse</v-list-item-title>
           </v-list-item>
-          <v-list-item v-else dark>
+          <v-list-item to="/perfil" v-if="isLoggedIn" dark>
+            <v-list-item-icon>
+              <v-icon>mdi-account-arrow-right</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Mi perfil</v-list-item-title>
+          </v-list-item>
+          <v-list-item v-if="isLoggedIn" dark>
             <v-list-item-icon>
               <v-icon>mdi-account-arrow-right</v-icon>
             </v-list-item-icon>
