@@ -2,7 +2,7 @@
   <v-content class="bg">
     <v-container fill-height pa-0>
       <v-layout align-center justify-center>
-        <v-flex xs10 sm7 md6 class="max">
+        <v-flex xs10 sm7 md6>
           <v-card elevation="10" shaped>
             <v-toolbar dark color="secondary">
               <v-btn @click="goBack" icon>
@@ -76,7 +76,10 @@
                     this.$refs.registerForm.validate()
                 },
                 goBack(){
-                  this.$router.push({path: this.$store.getters.getFromPath})
+                  if (this.$store.getters.getFromPath.includes('/registrarse') || this.$store.getters.getFromPath.includes('/ingresar'))
+                    this.$router.push({path: '/'})
+                  else
+                    this.$router.push({path: this.$store.getters.getFromPath})
                 }
             }
         }

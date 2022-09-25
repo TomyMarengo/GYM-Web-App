@@ -1,12 +1,15 @@
 import Vue from 'vue';
 import Vuex from "vuex";
-
+import routines from '../routines.js'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
+        routines,
         logged: false,
-        fromPath: null
+        fromPath: null,
+        exerciseTypes: ['Fortalecimiento', 'Aeróbico', 'Flexibilidad', 'Resistencia'],
+        muscles: ['Biceps', 'Cuadriceps', 'Dorsal', 'Pectoral', 'Piernas', 'Glúteos']
     },
     getters: {
       getLogged (state) {
@@ -14,6 +17,12 @@ export default new Vuex.Store({
       },
       getFromPath (state) {
           return state.fromPath
+      },
+      getExerciseTypes (state) {
+          return state.exerciseTypes
+      },
+      getMuscles (state) {
+          return state.muscles
       }
     },
     mutations: {
