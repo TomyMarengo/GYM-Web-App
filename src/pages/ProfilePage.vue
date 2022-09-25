@@ -41,12 +41,40 @@
       <v-btn v-if="!isEditingProfile" class="ma-4" rounded color="tertiary white--text" outlined :disabled="isLoggingOut" @click.prevent="logoutClicked">Cerrar Sesión</v-btn>
     </v-sheet>
 
-    <small-favorite-card :routine="{ name: 'Rutina123' }" :id="1" @icon-click="onRoutineUnfavorited"/>
-    <small-routine-card :routine="{ name: 'Rutina456' }" :id="1" @icon-click="onRoutineEditClicked"/>
-    <small-exercise-card :exercise="{ name: 'Ejercicio1', series: 50, seconds: 20 }"/>
-    <small-exercise-card :exercise="{ name: 'Ejercicio2', seconds: 20 }"/>
+    <div class="content-div my-6">
+      <h1 class="display-1 ml-14">Mis Favoritas</h1>
+      <v-slide-group show-arrows>
+        <v-slide-item v-for="(routine, i) in myFavorites" :key="i">
+          <small-favorite-card class="ma-2" :routine="routine" :id="i" @icon-click="onRoutineUnfavorited"/>
+        </v-slide-item>
+      </v-slide-group>
 
-    <v-snackbar v-model="showSnackbar" :multi-line="true" :bottom="true" :absolute="true"
+      <div class="title-button-div ml-14 mt-12">
+        <h1 class="display-1">Mis Rutinas</h1>
+        <v-btn fab :elevation="1" color="primary" rounded height="45px" width="45px">
+          <v-icon large color="secondary">mdi-plus</v-icon>
+        </v-btn>
+      </div>
+      <v-slide-group show-arrows>
+        <v-slide-item v-for="(routine, i) in myRoutines" :key="i">
+          <small-routine-card class="ma-2" :routine="routine" :id="i" @icon-click="onEditRoutineClicked"/>
+        </v-slide-item>
+      </v-slide-group>
+
+      <div class="title-button-div ml-14 mt-12">
+        <h1 class="display-1">Mis Rutinas</h1>
+        <v-btn fab :elevation="1" color="primary" rounded height="45px" width="45px">
+          <v-icon large color="secondary">mdi-plus</v-icon>
+        </v-btn>
+      </div>
+      <v-slide-group show-arrows>
+        <v-slide-item v-for="(exercise, i) in myExercises" :key="i">
+          <small-exercise-card class="ma-2" :exercise="exercise" :id="i" @icon-click="onEditExerciseClicked"/>
+        </v-slide-item>
+      </v-slide-group>
+    </div>
+
+    <v-snackbar v-model="showSnackbar" :multi-line="true" :bottom="true"
                 :timeout="snackbarTimeout" color="tertiary">
       {{ snackbarMessage }}
     </v-snackbar>
@@ -78,6 +106,33 @@ export default {
     snackbarMessage: '',
     showSnackbar: false,
     snackbarTimeout: 5000,
+
+    myFavorites: [
+      { name: 'Favorita1' },
+      { name: 'Favorita2' },
+      { name: 'Favorita3' },
+      { name: 'Favorita4' },
+      { name: 'Favorita5' },
+      { name: 'Favorita6' },
+    ],
+
+    myRoutines: [
+      { name: 'MiRutina1' },
+      { name: 'MiRutina2' },
+      { name: 'MiRutina3' },
+      { name: 'MiRutina4' },
+      { name: 'MiRutina5' },
+      { name: 'MiRutina6' },
+    ],
+
+    myExercises: [
+      { name: 'MiEjercicio1', series: 20, seconds: 50 },
+      { name: 'MiEjercicio2', seconds: 70 },
+      { name: 'MiEjercicio3', series: 30 },
+      { name: 'MiEjercicio4', series: 20, seconds: 50 },
+      { name: 'MiEjercicio5', seconds: 70 },
+      { name: 'MiEjercicio6', series: 30 },
+    ],
   }),
 
   computed: {
@@ -127,8 +182,12 @@ export default {
       console.log('Routine unfavorited: ' + id);
     },
 
-    onRoutineEditClicked: function (id) {
+    onEditRoutineClicked: function (id) {
       console.log('Edit routine clicked: ' + id);
+    },
+
+    onEditExerciseClicked: function(id) {
+      console.log('Edit exercise clicked: ' + id);
     },
   }
 }
@@ -163,5 +222,21 @@ export default {
 
   /* Inside auto layout */
   flex: none;
+}
+
+.content-div {
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  overflow: clip;
+}
+
+.title-button-div {
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
 }
 </style>

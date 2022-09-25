@@ -1,7 +1,7 @@
 <template>
   <v-card class="card py-8 px-4" width="320px" height="220px" color="#EDEDED">
     <div class="main-div">
-      <img :src="image" style="border-radius: 20px; height: 100%; aspect-ratio: 1" alt="profile picture"/>
+      <img :src="image" style="border-radius: 20px; height: 100%; width: 120px; object-fit: cover;"/>
       <div class="content-div">
         <slot/>
       </div>
@@ -31,8 +31,7 @@ export default {
 }
 </script>
 
-<style scoped>
-.card {
+<style scoped>.card {
   box-sizing: border-box;
 
   /* Auto layout */
