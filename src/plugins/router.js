@@ -1,18 +1,21 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import HomePage from '../pages/HomePage';
-import WorkoutsPage from "../pages/WorkoutsPage";
-import RegisterPage from "../pages/RegisterPage";
-import LoginPage from "../pages/LoginPage"
+
+import HomePage from '@/pages/HomePage';
+import WorkoutsPage from "@/pages/WorkoutsPage";
+import RegisterPage from "@/pages/RegisterPage";
+import ProfilePage from "@/pages/ProfilePage";
+import LoginPage from "@/pages/LoginPage"
 import store from "../store/index";
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
     routes: [
-        { path: '/', name: 'Inicio', component: HomePage },
-        { path: '/entrenamientos', component: WorkoutsPage},
-        { path: '/registrarse', component: RegisterPage},
+        { path: '/', component: HomePage },
+        { path: '/entrenamientos', component: WorkoutsPage },
+        { path: '/registrarse', component: RegisterPage },
+        { path: '/perfil', component: ProfilePage },
         { path: '/ingresar', component: LoginPage}
     ]
 });
