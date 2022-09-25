@@ -51,7 +51,7 @@
 
       <div class="title-button-div ml-14 mt-12">
         <h1 class="display-1">Mis Rutinas</h1>
-        <v-btn fab :elevation="1" color="primary" rounded height="45px" width="45px">
+        <v-btn @click.prevent="onAddRoutineClicked" fab :elevation="1" color="primary" rounded height="45px" width="45px">
           <v-icon large color="secondary">mdi-plus</v-icon>
         </v-btn>
       </div>
@@ -63,7 +63,7 @@
 
       <div class="title-button-div ml-14 mt-12">
         <h1 class="display-1">Mis Rutinas</h1>
-        <v-btn fab :elevation="1" color="primary" rounded height="45px" width="45px">
+        <v-btn @click.prevent="onAddExerciseClicked" fab :elevation="1" color="primary" rounded height="45px" width="45px">
           <v-icon large color="secondary">mdi-plus</v-icon>
         </v-btn>
       </div>
@@ -188,6 +188,14 @@ export default {
 
     onEditExerciseClicked: function(id) {
       console.log('Edit exercise clicked: ' + id);
+    },
+
+    onAddRoutineClicked: function() {
+      console.log('Add Routine Clicked!');
+    },
+
+    onAddExerciseClicked: function() {
+      console.log('Add Exercise Clicked!');
     },
   }
 }
