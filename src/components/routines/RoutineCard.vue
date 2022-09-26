@@ -1,8 +1,8 @@
 <template>
-  <v-card outlined class="fill-height mb-15">
+  <v-card :to="'rutinas/' + routine.id" hover outlined class="fill-height mb-15">
     <v-img src="../../../public/images/abdominales.jpg" height="200px" />
-    <v-card-title>{{ routine.name }}</v-card-title>
-    <v-card-subtitle>Creador por {{ routine.creator }}</v-card-subtitle>
+    <v-card-title class="text-capitalize">{{ routine.name }}</v-card-title>
+    <v-card-subtitle>Creada por {{ routine.creator }}</v-card-subtitle>
     <v-card-text>
       <strong>Contiene ejercicios de:</strong>
       <span v-for="(muscle, index) of routine.muscles" :key="muscle">
@@ -15,13 +15,13 @@
     </v-card-text>
     <v-card-actions class="card-actions">
       <v-spacer></v-spacer>
-      <v-sheet elevation="2" class="px-2 py-1 mr-4 d-flex align-center">
-        <div class="pr-1">{{routine.rating}}</div>
+      <v-sheet elevation="1" class="px-2 py-1 mr-4 d-flex align-center">
+        <div class="pr-1">{{routine.classification}}</div>
         <v-icon color="yellow">
           mdi-star
         </v-icon>
       </v-sheet>
-      <v-sheet elevation="2" class="px-2 py-1 mr-4 d-flex align-center">
+      <v-sheet elevation="1" class="px-2 py-1 mr-4 d-flex align-center">
         <div class="pr-1">{{routine.difficulty}}</div>
         <v-icon color="red">
           mdi-weight

@@ -5,7 +5,7 @@
           sm="6"
           lg="4"
           v-for="routine in this.routines"
-          :key="routine.name"
+          :key="routine.name + routine.creator"
       >
         <RoutineCard :routine="routine"/>
       </v-col>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import RoutineCard from "@/components/cards/RoutineCard";
+import RoutineCard from "@/components/routines/RoutineCard";
 export default {
   name: "WorkoutsDisplay",
   components: {RoutineCard},

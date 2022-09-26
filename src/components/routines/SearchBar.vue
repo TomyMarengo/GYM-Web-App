@@ -9,7 +9,9 @@
       <span><strong>Ordenar por</strong></span>
       <v-select
         v-model="selected"
-        :items="orderBy"
+        :items="items"
+        item-text="text"
+        item-value="value"
         attach
         chips
         multiple
@@ -24,7 +26,13 @@
 export default {
   name: "SearchBar",
   data: () => ({
-    orderBy: ['fecha', 'puntuación', 'dificultad', 'categoría', 'nombre', 'creador'],
+    items: [
+      {text: 'fecha', value: 'date'},
+      {text: 'puntuación', value: 'classification'},
+      {text: 'dificultad', value: 'difficulty'},
+      {text: 'nombre', value: 'name'},
+      {text: 'creador', value: 'creator'}
+    ],
     routine: '',
     creator: '',
     selected: []

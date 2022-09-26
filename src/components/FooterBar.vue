@@ -1,6 +1,6 @@
 <template>
   <v-footer padless dark color="secondary" class="px-5">
-    <v-card class="flex" color="secondary" >
+    <v-card class="flex" color="secondary">
       <v-card-title>
         <strong class="subtitle-1"> {{ new Date().getFullYear() }} — Todos los derechos reservados</strong>
         <v-spacer></v-spacer>
