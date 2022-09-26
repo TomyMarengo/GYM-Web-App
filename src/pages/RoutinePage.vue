@@ -24,7 +24,7 @@
         <v-expand-transition>
           <div v-click-outside="onClickOutside" v-if="creatingCycle">
             <v-divider></v-divider>
-            <v-sheet class="mx-auto" height="400px" outlined>
+            <v-sheet class="mx-auto" height="400px" outlined> //TODO
               Nombre del ciclo nuevo
             </v-sheet>
           </div>

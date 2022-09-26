@@ -19,7 +19,7 @@
               </v-form>
             </v-card-text>
             <v-card-actions class="d-flex justify-center">
-              <v-btn x-large @click="validateForm" rounded color="primary" class="secondary--text px-7 py-2">Siguiente</v-btn>
+              <v-btn x-large to="/verificar-usuario" @click="validateForm" rounded color="primary" class="secondary--text px-7 py-2">Siguiente</v-btn>
             </v-card-actions>
             <v-card-text class="d-flex justify-center text-center">
               <div class="sign-in-text my-3">¿Ya tienes una cuenta? Ingresa <router-link to="/ingresar"><span style="color:cadetblue;text-decoration: underline;">aquí</span></router-link></div>

@@ -11,7 +11,9 @@
                 <v-toolbar-title class="font-weight-bold text-uppercase">¡USUARIO REGISTRADO!</v-toolbar-title>
               </v-toolbar>
               <v-card-text class="d-flex justify-center text-center">
-                <div class="text my-3">Antes de poder acceder, te pedimos que verifiques tu dirección de email. Ingrese el código que ha sido enviado a su casilla de correo electrónico para poder continuar.</div>
+                <div class="text my-5 mx-15">Antes de poder acceder, te pedimos que verifiques tu dirección de email.
+                  Ingrese el código que ha sido enviado a su casilla de correo electrónico para poder continuar.
+                </div>
               </v-card-text>
               <v-card-text class="px-10 mt-4">
                 <v-form ref="verifyForm">

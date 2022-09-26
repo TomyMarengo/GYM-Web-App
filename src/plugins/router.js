@@ -20,7 +20,7 @@ const router = new VueRouter({
         { path: '/registrarse', component: RegisterPage },
         { path: '/perfil', component: ProfilePage },
         { path: '/ingresar', component: LoginPage},
-        { path: '/verificar-usuario', component: VerifyPage }
+        { path: '/verificar-usuario', component: VerifyPage },
         { path: '/rutinas/:id', component: RoutinePage}
     ]
 });
