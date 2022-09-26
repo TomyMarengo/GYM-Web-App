@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col lg="3" sm="12" md="4" class="pb-0">
-        <side-bar v-on:filter-event="filterHandle"></side-bar>
+        <filter-bar v-on:filter-event="filterHandle"></filter-bar>
       </v-col>
       <v-col md="8">
         <v-row>
@@ -17,15 +17,15 @@
   </v-container>
 </template>
 <script>
-  import SideBar from "@/components/workouts/SideBar";
-  import WorkoutsDisplay from "@/components/workouts/WorkoutsDisplay";
-  import SearchBar from "@/components/workouts/SearchBar";
+  import FilterBar from "@/components/routines/FilterBar";
+  import WorkoutsDisplay from "@/components/routines/WorkoutsDisplay";
+  import SearchBar from "@/components/routines/SearchBar";
   import store from "@/store";
 
   export default {
     name: "WorkoutsPage",
     components: {
-      SideBar,
+      FilterBar,
       WorkoutsDisplay,
       SearchBar
     },

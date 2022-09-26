@@ -18,7 +18,7 @@
             </v-list-item-icon>
             <v-list-item-title>Inicio</v-list-item-title>
           </v-list-item>
-          <v-list-item to="/entrenamientos" dark>
+          <v-list-item to="/rutinas" dark>
             <v-list-item-icon>
               <v-icon>mdi-dumbbell</v-icon>
             </v-list-item-icon>
@@ -59,7 +59,7 @@
       <v-toolbar-title class="pa-0 primary--text">ENTRENAGRATIS.ES</v-toolbar-title>
       <v-toolbar-items class="inicio-entrenamientos">
         <v-btn class="primary--text" to="/" text>Inicio</v-btn>
-        <v-btn class="primary--text" to="/entrenamientos" text>Entrenamientos</v-btn>
+        <v-btn class="primary--text" to="/rutinas" text>Rutinas</v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-items v-if="!isLoggedIn">

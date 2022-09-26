@@ -1,14 +1,59 @@
 export default [
     {
+        id: 1,
         name: 'rutina1',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
         classification: 4.3,
         difficulty: 4,
-        exercises: [],
+        cycles: [
+            {
+                name: 'Entrada en Calor',
+                repetitions: 1,
+                exercises: [
+                    {name: 'Salto con Soga', series: 50, seconds: 0,
+                        archives: [
+
+                        ]
+                    },
+                    {name: 'Descanso', series: 0, seconds: 40,
+                        archives: [
+
+                        ]
+                    },
+                    {name: 'Burpees', series:40, seconds: 0,
+                        archives: [
+
+                        ]
+                    }
+                ]
+            },
+            {
+                name: 'Ejercitación A',
+                repetitions: 2,
+                exercises: [
+                    {name: 'Flexiones de brazos', series: 20, seconds: 60,
+                        archives: [
+                            "abdominales.jpg", "perfil.jpeg"
+                        ]
+                    },
+                    {name: 'Descanso', series: 0, seconds: 60,
+                        archives: [
+                            "abdominales.jpg", "perfil.jpeg"
+                        ]
+                    },
+                    {name: 'Abdominales', series: 15, seconds: 50,
+                        archives: [
+
+                        ]
+                    }
+                ]
+            }
+        ],
     },
     {
+        id: 2,
         name: 'rutina2',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Aeróbico'],
@@ -18,6 +63,7 @@ export default [
         exercises: []
     },
     {
+        id: 3,
         name: 'rutina23',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -27,6 +73,7 @@ export default [
         exercises: []
     },
     {
+        id: 4,
         name: 'rutina44',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -36,6 +83,7 @@ export default [
         exercises: []
     },
     {
+        id: 5,
         name: 'rutina125',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -45,6 +93,7 @@ export default [
         exercises: []
     },
     {
+        id: 6,
         name: 'rutina6',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento'],
@@ -52,7 +101,9 @@ export default [
         classification: 5,
         difficulty: 5,
         exercises: []
-    }, {
+    },
+    {
+        id: 7,
         name: 'rutina7',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -62,6 +113,7 @@ export default [
         exercises: []
     },
     {
+        id: 8,
         name: 'rutina88',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -71,6 +123,7 @@ export default [
         exercises: []
     },
     {
+        id: 9,
         name: 'rutina9',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -80,6 +133,7 @@ export default [
         exercises: []
     },
     {
+        id: 10,
         name: 'rutina20',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Aeróbico'],
@@ -89,6 +143,7 @@ export default [
         exercises: []
     },
     {
+        id: 11,
         name: 'rutina11',
         creator: 'Thomas Mizrahi',
         exerciseTypes: [],
@@ -98,6 +153,7 @@ export default [
         exercises: []
     },
     {
+        id: 12,
         name: 'rutina48',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -107,6 +163,7 @@ export default [
         exercises: []
     },
     {
+        id: 13,
         name: 'rutina13',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -116,6 +173,7 @@ export default [
         exercises: []
     },
     {
+        id: 14,
         name: 'rutina88',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -125,6 +183,7 @@ export default [
         exercises: []
     },
     {
+        id: 15,
         name: 'rutina9',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -134,6 +193,7 @@ export default [
         exercises: []
     },
     {
+        id: 16,
         name: 'rutina20',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Aeróbico'],
@@ -143,6 +203,7 @@ export default [
         exercises: []
     },
     {
+        id: 17,
         name: 'rutina11',
         creator: 'Tomas Marengo',
         exerciseTypes: [],
@@ -152,6 +213,7 @@ export default [
         exercises: []
     },
     {
+        id: 18,
         name: 'rutina48',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -161,6 +223,7 @@ export default [
         exercises: []
     },
     {
+        id: 19,
         name: 'rutina13',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],

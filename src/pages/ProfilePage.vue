@@ -13,8 +13,8 @@
 
 <script>
 
-import ProfileData from "@/components/profile/profileData";
-import ProfileRoutinesAndExercises from "@/components/profile/profileRoutinesAndExercises";
+import ProfileData from "@/components/profile/ProfileData";
+import ProfileRoutinesAndExercises from "@/components/profile/ProfileRoutinesAndExercises";
 
 export default {
   name: "ProfilePage",

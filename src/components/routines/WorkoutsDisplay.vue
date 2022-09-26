@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import RoutineCard from "@/components/cards/RoutineCard";
+import RoutineCard from "@/components/routines/RoutineCard";
 export default {
   name: "WorkoutsDisplay",
   components: {RoutineCard},

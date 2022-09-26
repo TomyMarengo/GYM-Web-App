@@ -1,8 +1,8 @@
 <template>
-  <v-card outlined class="fill-height mb-15">
+  <v-card :to="'rutinas/' + routine.id" hover outlined class="fill-height mb-15">
     <v-img src="../../../public/images/abdominales.jpg" height="200px" />
-    <v-card-title>{{ routine.name }}</v-card-title>
-    <v-card-subtitle>Creador por {{ routine.creator }}</v-card-subtitle>
+    <v-card-title class="text-capitalize">{{ routine.name }}</v-card-title>
+    <v-card-subtitle>Creada por {{ routine.creator }}</v-card-subtitle>
     <v-card-text>
       <strong>Contiene ejercicios de:</strong>
       <span v-for="(muscle, index) of routine.muscles" :key="muscle">

@@ -1,7 +1,7 @@
 <template>
   <v-card :elevation="4" class="my-6">
     <v-toolbar dark color="secondary">
-      <v-toolbar-title class="font-weight-bold text-uppercase">Entrenamientos</v-toolbar-title>
+      <v-toolbar-title class="font-weight-bold text-uppercase">Rutinas</v-toolbar-title>
     </v-toolbar>
     <v-card-title>Filtros</v-card-title>
     <v-expansion-panels class="px-5">

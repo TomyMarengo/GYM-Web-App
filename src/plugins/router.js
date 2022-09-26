@@ -2,10 +2,11 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 import HomePage from '@/pages/HomePage';
-import WorkoutsPage from "@/pages/WorkoutsPage";
+import RoutinesPage from "@/pages/RoutinesPage";
 import RegisterPage from "@/pages/RegisterPage";
 import ProfilePage from "@/pages/ProfilePage";
-import LoginPage from "@/pages/LoginPage"
+import LoginPage from "@/pages/LoginPage";
+import RoutinePage from "@/pages/RoutinePage";
 import store from "../store/index";
 
 Vue.use(VueRouter);
@@ -13,10 +14,11 @@ Vue.use(VueRouter);
 const router = new VueRouter({
     routes: [
         { path: '/', component: HomePage },
-        { path: '/entrenamientos', component: WorkoutsPage },
+        { path: '/rutinas', component: RoutinesPage },
         { path: '/registrarse', component: RegisterPage },
         { path: '/perfil', component: ProfilePage },
-        { path: '/ingresar', component: LoginPage}
+        { path: '/ingresar', component: LoginPage},
+        { path: '/rutinas/:id', component: RoutinePage}
     ]
 });
 
