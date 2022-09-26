@@ -7,6 +7,8 @@ import RegisterPage from "@/pages/RegisterPage";
 import ProfilePage from "@/pages/ProfilePage";
 import LoginPage from "@/pages/LoginPage";
 import RoutinePage from "@/pages/RoutinePage";
+import VerifyPage from "@/pages/VerifyPage"
+
 import store from "../store/index";
 
 Vue.use(VueRouter);
@@ -18,6 +20,7 @@ const router = new VueRouter({
         { path: '/registrarse', component: RegisterPage },
         { path: '/perfil', component: ProfilePage },
         { path: '/ingresar', component: LoginPage},
+        { path: '/verificar-usuario', component: VerifyPage }
         { path: '/rutinas/:id', component: RoutinePage}
     ]
 });
