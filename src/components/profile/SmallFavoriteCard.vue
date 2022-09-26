@@ -1,5 +1,5 @@
 <template>
-  <small-card :id="id" icon="mdi-heart" icon-color="#FFA8A8" @icon-click="iconClicked">
+  <small-card :path="'rutinas/' + routine.id" :id="id" icon="mdi-heart" icon-color="#FFA8A8" @icon-click="iconClicked">
     <v-card-title>{{routine.name}}</v-card-title>
   </small-card>
 </template>

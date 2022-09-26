@@ -74,17 +74,12 @@ export default {
     isSavingProfile: false,
     isLoggingOut: false,
     sexes: ['Male', 'Female', 'Unspecified' ],
-    userData: {
-      fullName: 'Pedro McPedro',
-      sex: 'Male',
-      birthday: '2000-4-20',
-      picture: null,
-    },
     editingUserData: undefined,
     snackbarMessage: '',
     showSnackbar: false,
     snackbarTimeout: 5000,
   }),
+  props: ['userData'],
 
   computed: {
     profilePicToDisplay: function () {
@@ -104,7 +99,7 @@ export default {
     editProfileSaveClicked: async function () {
       this.isSavingProfile = true;
       await new Promise(resolve => setTimeout(resolve, 1000));
-      this.userData = this.editingUserData;
+      this.$props.userData = this.editingUserData;
       this.snackbarMessage = 'Su perfil ha sido actualizado';
       this.showSnackbar = true;
       this.isSavingProfile = false;

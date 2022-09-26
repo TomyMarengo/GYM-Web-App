@@ -1,5 +1,5 @@
 <template>
-  <v-card outlined class="fill-height" height="350" width="350px">
+  <v-card :to="path" outlined class="fill-height" height="350" width="350px">
     <v-img :src="image" height="200px" />
     <div class="d-flex align-center">
       <slot/>
@@ -18,6 +18,7 @@ export default {
 
   props: {
     image: { default: require('../../../public/images/abdominales.jpg') },
+    path: {type: String},
     icon: { type: String },
     iconColor: { type: String },
     id: {},

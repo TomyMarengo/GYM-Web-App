@@ -5,8 +5,8 @@
       <v-toolbar-title class="font-weight-bold text-uppercase">Mis Favoritas</v-toolbar-title>
     </v-toolbar>
     <v-slide-group show-arrows>
-      <v-slide-item v-for="(routine, i) in myFavorites" :key="i">
-        <small-favorite-card class="ma-2" :routine="routine" :id="i" @icon-click="onRoutineUnfavorited"/>
+      <v-slide-item v-for="(routine, i) in favorites" :key="i">
+        <small-favorite-card class="ma-2" :routine="getRoutine(routine.id)" :id="i" @icon-click="onRoutineUnfavorited"/>
       </v-slide-item>
     </v-slide-group>
 
@@ -17,8 +17,8 @@
       </v-btn>
     </v-toolbar>
     <v-slide-group show-arrows>
-      <v-slide-item v-for="(routine, i) in myRoutines" :key="i">
-        <small-routine-card class="ma-2" :routine="routine" :id="i" @icon-click="onEditRoutineClicked"/>
+      <v-slide-item v-for="(routine, i) in userData.routines" :key="i">
+        <small-routine-card class="ma-2" :routine="getRoutine(routine.id)" :id="i" @icon-click="onEditRoutineClicked"/>
       </v-slide-item>
     </v-slide-group>
 
@@ -29,7 +29,7 @@
       </v-btn>
     </v-toolbar>
     <v-slide-group show-arrows>
-      <v-slide-item v-for="(exercise, i) in myExercises" :key="i">
+      <v-slide-item v-for="(exercise, i) in userData.exercises" :key="i">
         <small-exercise-card class="ma-2" :exercise="exercise" :id="i" @icon-click="onEditExerciseClicked"/>
       </v-slide-item>
     </v-slide-group>
@@ -41,42 +41,26 @@
 import SmallFavoriteCard from "@/components/profile/SmallFavoriteCard";
 import SmallRoutineCard from "@/components/profile/SmallRoutineCard";
 import SmallExerciseCard from "@/components/profile/SmallExerciseCard";
+import routines from "@/routines";
 
 export default {
   name: "profileRoutinesAndExercises",
 
   components: {SmallExerciseCard, SmallRoutineCard, SmallFavoriteCard},
 
-  data: () => ({
-    myFavorites: [
-      { name: 'Favorita1' },
-      { name: 'Favorita2' },
-      { name: 'Favorita3' },
-      { name: 'Favorita4' },
-      { name: 'Favorita5' },
-      { name: 'Favorita6' },
-    ],
+  props: ['userData'],
 
-    myRoutines: [
-      { name: 'MiRutina1' },
-      { name: 'MiRutina2' },
-      { name: 'MiRutina3' },
-      { name: 'MiRutina4' },
-      { name: 'MiRutina5' },
-      { name: 'MiRutina6' },
-    ],
-
-    myExercises: [
-      { name: 'MiEjercicio1', series: 20, seconds: 50 },
-      { name: 'MiEjercicio2', seconds: 70 },
-      { name: 'MiEjercicio3', series: 30 },
-      { name: 'MiEjercicio4', series: 20, seconds: 50 },
-      { name: 'MiEjercicio5', seconds: 70 },
-      { name: 'MiEjercicio6', series: 30 },
-    ],
-  }),
+  computed: {
+    favorites: function () {
+      return this.$props.userData.routines.filter(r => r.favorite == true)
+    }
+  },
 
   methods: {
+    getRoutine: function (id) {
+      return routines.filter(r => r.id == id)[0]
+    },
+
     onRoutineUnfavorited: function (id) {
       console.log('Routine unfavorited: ' + id);
     },

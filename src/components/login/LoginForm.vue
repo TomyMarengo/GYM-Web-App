@@ -56,7 +56,7 @@
             methods: {
                 validateForm(){
                     if (this.$refs.loginForm.validate()) {
-                      this.$store.commit('login')
+                      this.$store.commit('login', this.email)
                       this.goBack()
                     }
                 },
