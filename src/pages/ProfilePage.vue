@@ -28,7 +28,6 @@ export default {
     if (this.$store.getters.getLogged) {
       this.user = users.filter(user => user.email === this.$store.getters.getUser)[0]
     }
-    console.log(this.user)
   }
 }
 </script>

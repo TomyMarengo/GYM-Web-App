@@ -11,7 +11,7 @@
     <v-expand-transition>
       <div v-show="show">
         <v-divider></v-divider>
-        <v-sheet class="mx-auto" outlined max-width="800">
+        <v-sheet class="mx-auto" outlined>
           <v-slide-group v-model="model" class="pa-4" show-arrows>
             <v-slide-item
                 v-for="(exercise, index) in cycle.exercises"
@@ -33,11 +33,29 @@
                   {{exercise.seconds == 0 ? '' : exercise.seconds + " segundos"}}
                 </v-card-subtitle>
               </v-card>
+            </v-slide-item >
+            <v-slide-item v-if="belongs"
+                v-slot="{ active, toggle }"
+            >
+              <v-card
+                  :elevation="active ? 5 : 1"
+                  color="primary"
+                  class="ma-4 fill-height d-flex justify-center align-center"
+                  height="250"
+                  width="100"
+                  @click="toggle"
+              >
+                <v-icon
+                    color="secondary"
+                    size="60"
+                    v-text="'mdi-plus'"
+                ></v-icon>
+              </v-card>
             </v-slide-item>
           </v-slide-group>
 
           <v-expand-transition>
-                <v-carousel v-if="model != null && cycle.exercises[model].archives.length!=0">
+                <v-carousel v-if=" model != cycle.exercises.length && model != null && cycle.exercises[model].archives.length!=0">
                   <v-carousel-item
                       v-for="(archive, index) in cycle.exercises[model].archives"
                       :src="require('../../../public/images/' + archive)"
@@ -55,7 +73,7 @@
 <script>
 export default {
   name: "CycleCard",
-  props: ['cycle'],
+  props: ['cycle', 'belongs'],
   data: () => ({
     show: false,
     model: null,

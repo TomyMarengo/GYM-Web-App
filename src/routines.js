@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         name: 'rutina1',
-        creator: 'Thomas Mizrahi',
+        creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal'],
         classification: 4.3,

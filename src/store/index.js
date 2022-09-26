@@ -6,8 +6,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
     state: {
         routines,
-        logged: false,
-        user: '',
+        logged: true,
+        user: 'tmarengo@itba.edu.ar',
         fromPath: null,
         exerciseTypes: ['Fortalecimiento', 'Aeróbico', 'Flexibilidad', 'Resistencia'],
         muscles: ['Biceps', 'Cuadriceps', 'Dorsal', 'Pectoral', 'Piernas', 'Glúteos']

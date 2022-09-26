@@ -100,6 +100,7 @@ export default {
       this.isSavingProfile = true;
       await new Promise(resolve => setTimeout(resolve, 1000));
       this.$props.userData = this.editingUserData;
+      // TODO Update user.js or wait for API
       this.snackbarMessage = 'Su perfil ha sido actualizado';
       this.showSnackbar = true;
       this.isSavingProfile = false;
