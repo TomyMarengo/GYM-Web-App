@@ -5,7 +5,8 @@ export default [
         sex: 'Male',
         birthday: '1999-10-28',
         picture: null,
-        routines: [{id: 1, favorite: false},{id: 2, favorite: true}],
+        routines: [{id: 0},{id: 1}],
+        favorites: [{id: 0}, {id: 2}],
         exercises: [
             {name: 'Correr', series: 50, seconds: 0,
                 archives: [

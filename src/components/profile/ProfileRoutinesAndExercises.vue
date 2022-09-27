@@ -5,7 +5,7 @@
       <v-toolbar-title class="font-weight-bold text-uppercase">Mis Favoritas</v-toolbar-title>
     </v-toolbar>
     <v-slide-group show-arrows>
-      <v-slide-item v-for="(routine, i) in favorites" :key="i">
+      <v-slide-item v-for="(routine, i) in userData.favorites" :key="i">
         <small-favorite-card class="ma-2" :routine="getRoutine(routine.id)" :id="i" @icon-click="onRoutineUnfavorited"/>
       </v-slide-item>
     </v-slide-group>
@@ -50,12 +50,6 @@ export default {
 
   props: ['userData'],
 
-  computed: {
-    favorites: function () {
-      return this.$props.userData.routines.filter(r => r.favorite == true)
-    }
-  },
-
   methods: {
     getRoutine: function (id) {
       return routines.filter(r => r.id == id)[0]
@@ -85,29 +79,5 @@ export default {
 </script>
 
 <style scoped>
-  .main-div {
-    height: 100%;
-    background-color: white;
-    /* Auto layout */
 
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-
-  .content-div {
-    /* Auto layout */
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    overflow: clip;
-  }
-
-  .title-button-div {
-    /* Auto layout */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 15px;
-  }
 </style>

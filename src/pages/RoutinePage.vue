@@ -2,13 +2,13 @@
   <v-container>
     <v-row>
       <v-col cols="12" md="4" lg="3" class="pb-0">
-        <routine-side-bar :title="routine.name" :rating="routine.classification"></routine-side-bar>
+        <routine-side-bar :routine="routine"></routine-side-bar>
       </v-col>
       <v-col md="8">
         <routine-card-horizontal class="mt-6" :routine="routine"></routine-card-horizontal>
         <cycle-card :belongs="belongs" v-for="(cycle,index) in routine.cycles" :key="index" :cycle="cycle"></cycle-card>
         <v-card
-            v-if="!creatingCycle"
+            v-if="belongs && !creatingCycle"
             class="d-flex justify-center align-center"
             color="primary"
             height="100px"
@@ -38,7 +38,7 @@
 <script>
 import routines from "@/routines";
 import users from "@/users";
-import RoutineSideBar from "@/components/routines/RoutineSideBar";
+import RoutineSideBar from "@/components/routines/SideBar";
 import RoutineCardHorizontal from "@/components/routines/RoutineCardHorizontal"
 import CycleCard from "@/components/routines/CycleCard";
 

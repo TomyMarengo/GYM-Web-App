@@ -1,6 +1,6 @@
 export default [
     {
-        id: 1,
+        id: 0,
         name: 'rutina1',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -53,7 +53,7 @@ export default [
         ],
     },
     {
-        id: 2,
+        id: 1,
         name: 'rutina2',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Aeróbico'],
@@ -63,7 +63,7 @@ export default [
         exercises: []
     },
     {
-        id: 3,
+        id: 2,
         name: 'rutina23',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -73,7 +73,7 @@ export default [
         exercises: []
     },
     {
-        id: 4,
+        id: 3,
         name: 'rutina44',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -83,7 +83,7 @@ export default [
         exercises: []
     },
     {
-        id: 5,
+        id: 4,
         name: 'rutina125',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -93,7 +93,7 @@ export default [
         exercises: []
     },
     {
-        id: 6,
+        id: 5,
         name: 'rutina6',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento'],
@@ -103,7 +103,7 @@ export default [
         exercises: []
     },
     {
-        id: 7,
+        id: 6,
         name: 'rutina7',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -113,7 +113,7 @@ export default [
         exercises: []
     },
     {
-        id: 8,
+        id: 7,
         name: 'rutina88',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -123,7 +123,7 @@ export default [
         exercises: []
     },
     {
-        id: 9,
+        id: 8,
         name: 'rutina9',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -133,7 +133,7 @@ export default [
         exercises: []
     },
     {
-        id: 10,
+        id: 9,
         name: 'rutina20',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Aeróbico'],
@@ -143,7 +143,7 @@ export default [
         exercises: []
     },
     {
-        id: 11,
+        id: 10,
         name: 'rutina11',
         creator: 'Thomas Mizrahi',
         exerciseTypes: [],
@@ -153,7 +153,7 @@ export default [
         exercises: []
     },
     {
-        id: 12,
+        id: 11,
         name: 'rutina48',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -163,7 +163,7 @@ export default [
         exercises: []
     },
     {
-        id: 13,
+        id: 12,
         name: 'rutina13',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -173,7 +173,7 @@ export default [
         exercises: []
     },
     {
-        id: 14,
+        id: 13,
         name: 'rutina88',
         creator: 'Thomas Mizrahi',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -183,7 +183,7 @@ export default [
         exercises: []
     },
     {
-        id: 15,
+        id: 14,
         name: 'rutina9',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -193,7 +193,7 @@ export default [
         exercises: []
     },
     {
-        id: 16,
+        id: 15,
         name: 'rutina20',
         creator: 'Tomas Marengo',
         exerciseTypes: ['Aeróbico'],
@@ -203,7 +203,7 @@ export default [
         exercises: []
     },
     {
-        id: 17,
+        id: 16,
         name: 'rutina11',
         creator: 'Tomas Marengo',
         exerciseTypes: [],
@@ -213,7 +213,7 @@ export default [
         exercises: []
     },
     {
-        id: 18,
+        id: 17,
         name: 'rutina48',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],
@@ -223,7 +223,7 @@ export default [
         exercises: []
     },
     {
-        id: 19,
+        id: 18,
         name: 'rutina13',
         creator: 'Ivan Chayer',
         exerciseTypes: ['Fortalecimiento', 'Aeróbico'],

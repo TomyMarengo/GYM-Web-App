@@ -1,11 +1,13 @@
 import Vue from 'vue';
 import Vuex from "vuex";
-import routines from '../routines.js'
+import routines from '../routines'
+import users from '../users'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
     state: {
         routines,
+        users: users,
         logged: true,
         user: 'tmarengo@itba.edu.ar',
         fromPath: null,
@@ -40,6 +42,9 @@ export default new Vuex.Store({
         },
         setFromPath: (state, newFromPath) => {
             state.fromPath = newFromPath
+        },
+        addExercise: (state, idRoutine, idCycle, exercise) => {
+            state.routines[idRoutine].cycles[idCycle].exercises.push(exercise)
         }
     }
 })

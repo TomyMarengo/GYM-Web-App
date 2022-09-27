@@ -5,7 +5,7 @@
         <profile-data v-bind:user-data="{fullName: user.fullName, sex: user.sex, birthday: user.birthday, picture: user.picture}"></profile-data>
       </v-col>
       <v-col lg="8">
-        <profile-routines-and-exercises v-bind:user-data="{routines: user.routines, exercises: user.exercises}"></profile-routines-and-exercises>
+        <profile-routines-and-exercises v-bind:user-data="{routines: user.routines, favorites: user.favorites, exercises: user.exercises}"></profile-routines-and-exercises>
       </v-col>
     </v-row>
   </v-container>

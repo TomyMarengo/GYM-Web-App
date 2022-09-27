@@ -1,10 +1,10 @@
 <template>
   <div>
     <v-app-bar class="hidden-md-and-up" color="secondary" dark>
-      <v-app-bar-nav-icon>
-        <v-icon color="primary">mdi-dumbbell</v-icon>
-      </v-app-bar-nav-icon>
-      <v-toolbar-title class="pa-0 primary--text">ENTRENAGRATIS.ES</v-toolbar-title>
+      <v-btn class="no-active" dark text to="/">
+        <v-icon class="mr-2" color="primary">mdi-dumbbell</v-icon>
+        <v-toolbar-title class="pa-0 primary--text">ENTRENAGRATIS.ES</v-toolbar-title>
+      </v-btn>
       <v-spacer></v-spacer>
       <v-app-bar-nav-icon color="primary" @click="drawer = true"></v-app-bar-nav-icon>
     </v-app-bar>
@@ -53,10 +53,13 @@
     </v-navigation-drawer>
 
     <v-app-bar class="hidden-sm-and-down" color="secondary">
-      <v-app-bar-nav-icon>
-        <v-icon color="primary">mdi-dumbbell</v-icon>
-      </v-app-bar-nav-icon>
-      <v-toolbar-title class="pa-0 primary--text">ENTRENAGRATIS.ES</v-toolbar-title>
+
+      <v-toolbar-items>
+        <v-btn class="no-active" dark text to="/">
+            <v-icon class="mr-2" color="primary">mdi-dumbbell</v-icon>
+          <v-toolbar-title class="pa-0 primary--text">ENTRENAGRATIS.ES</v-toolbar-title>
+        </v-btn>
+      </v-toolbar-items>
       <v-toolbar-items class="inicio-entrenamientos">
         <v-btn class="primary--text" to="/" text>Inicio</v-btn>
         <v-btn class="primary--text" to="/rutinas" text>Rutinas</v-btn>
@@ -109,5 +112,9 @@ export default {
     top: 50%;  /* position the top  edge of the element at the middle of the parent */
     left: 50%; /* position the left edge of the element at the middle of the parent */
     transform: translate(-50%, -50%); /* This is a shorthand of translateX(-50%) and translateY(-50%) */
+  }
+
+  .v-btn--active.no-active::before {
+    opacity: 0 !important;
   }
 </style>
